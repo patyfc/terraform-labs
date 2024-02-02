@@ -1,13 +1,13 @@
 Lab 1
-Usando variáveis:
-- Criar VPC com CIDR 10.0.0.0/16 *
-- Criar 2 Subnets Públicas /24 dinamicamente baseado no valor do CIDR da VPC. *
-- Criar 2 Subnets Privadas com Nat Gateway /24 dinamicamente baseado no valor do CIDR da VPC. *
+Using variables:
+- Create VPC with CIDR 10.0.0.0/16
+- Create 2 Public Subnets /24 dynamically based on the CIDR value of the VPC.
+- Create 2 Private Subnets with Nat Gateway /24 dynamically based on the VPC CIDR value.
 
 
-- Usando count, criar uma EC2 do tipo Ubuntu em cada subnet privada com Nat Gateway, instalar Nginx e criar index.html que mostre a seguinte informação:
-   "Olá. Sou o servidor <instance id> and estou na AZ <az id>."
-   O valor de <instance id> deve ser buscado através de meta-data enquanto o AZ, através do template_file no Terraform. *
-- Criar App Load Balancer na subnet pública e anexar os dois servidores à ele.
-- EC2 deve permitir tráfego HTTP somente do LB. LB deve receber tráfego HTTP de qualquer origem.
-- Enviar para o GitHub em um diretório chamado Lab1. Não deve ser enviado os arquivos tfstate (adicionar no .gitignore)
+- Using count, create an Ubuntu-type EC2 in each private subnet with Nat Gateway, install Nginx and create index.html that shows the following information:
+   "Hello. I'm the server <instance id> and I'm in AZ <az id>."
+   The value of <instance id> must be fetched through meta-data while AZ, through the template_file in Terraform. 
+- Create App Load Balancer on the public subnet and attach the two servers to it.
+- EC2 must allow HTTP traffic only from LB. LB must receive HTTP traffic from any source.
+- Push to GitHub in a directory called Lab1. tfstate files should not be sent (add to .gitignore)
